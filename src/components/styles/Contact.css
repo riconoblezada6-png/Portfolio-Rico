@@ -1,0 +1,221 @@
+.contact-section {
+  margin: auto;
+  padding-bottom: 100px;
+  margin-top: 100px;
+  position: relative;
+  z-index: 2;
+  background-color: var(--backgroundColor);
+}
+
+.contact-section h3 {
+  font-size: 60px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+/* ── Split layout: form | existing info ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ── Contact form ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 36px;
+  border-radius: 20px;
+  background: linear-gradient(
+    160deg,
+    rgba(60, 10, 10, 0.35),
+    rgba(10, 2, 2, 0.55)
+  );
+  border: 1px solid rgba(230, 57, 70, 0.18);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+  opacity: 1 !important;
+}
+
+.contact-form-subtitle {
+  margin: 0 0 8px;
+  font-size: 14px;
+  opacity: 0.65;
+  line-height: 1.5;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.contact-field input,
+.contact-field textarea {
+  font-family: "Geist", sans-serif;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #eae5ec;
+  font-size: 15px;
+  text-transform: none;
+  letter-spacing: normal;
+  resize: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-color: var(--accentColor);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+.contact-submit {
+  margin-top: 8px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: none;
+  background: var(--accentColor);
+  color: #fff;
+  font-family: "Geist", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(230, 57, 70, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(230, 57, 70, 0.6);
+}
+
+.contact-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: flex-start;
+}
+
+.contact-flex h4 {
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.6;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-flex p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+a.contact-social {
+  font-size: 25px;
+  border-bottom: 1px solid #ccc;
+}
+
+.contact-box h2 {
+  font-weight: 400;
+  font-size: 23px;
+  margin: 0;
+}
+
+.contact-box h2>span {
+  color: var(--accentColor);
+}
+
+.contact-box h5 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  display: flex;
+  gap: 10px;
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 1600px) {
+  .contact-section h3 {
+    font-size: 50px;
+  }
+
+  .contact-box h2 {
+    font-size: 20px;
+  }
+
+  a.contact-social {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .contact-section h3 {
+    font-size: 40px;
+  }
+
+  .contact-box h2 {
+    font-size: 18px;
+  }
+
+  a.contact-social {
+    font-size: 20px;
+  }
+
+  .contact-flex p {
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+
+  .contact-flex {
+    gap: 40px;
+  }
+
+  .contact-flex p {
+    margin-bottom: 0px;
+  }
+
+  .contact-flex h4 {
+    margin-top: 20px;
+  }
+
+  .contact-section {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .contact-container {
+    width: calc(100% - 25px);
+  }
+}

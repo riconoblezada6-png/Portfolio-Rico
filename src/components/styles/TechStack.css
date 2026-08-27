@@ -1,0 +1,226 @@
+.techstack-section {
+  width: 100%;
+  max-width: var(--cMaxWidth);
+  margin: 0 auto;
+  padding: 100px 0 140px;
+  perspective: 2000px;
+}
+
+.techstack-section h2 {
+  font-size: 60px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 60px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.techstack-section h2 > span {
+  color: var(--accentColor);
+}
+
+.tech-carousel {
+  position: relative;
+  width: 92%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 40px 30px;
+  border-radius: 24px;
+  background: linear-gradient(
+    160deg,
+    rgba(60, 10, 10, 0.35),
+    rgba(10, 2, 2, 0.55)
+  );
+  border: 1px solid rgba(230, 57, 70, 0.15);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.55);
+  transform: rotateX(4deg);
+  transition: transform 0.6s ease;
+}
+
+.tech-carousel:hover {
+  transform: rotateX(0deg);
+}
+
+.tech-cards-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  min-height: 380px;
+}
+
+.tech-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background-color: #150707;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transform: scaleY(0.15) translateY(10px);
+  transform-origin: top;
+  animation: cardOpen 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardOpen {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.1) translateY(-10px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+.tech-card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tech-card-media img,
+.tech-card-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 40px;
+  box-sizing: border-box;
+  transition: opacity 0.4s ease, transform 6s ease;
+}
+
+.tech-card:hover .tech-card-media img,
+.tech-card:hover .tech-card-media video {
+  transform: scale(1.08);
+}
+
+.tech-card-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 2, 2, 0) 40%,
+    rgba(8, 1, 1, 0.9) 100%
+  );
+}
+
+.tech-card-info {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  right: 18px;
+  z-index: 2;
+}
+
+.tech-card-tag {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accentColor);
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.tech-card-info h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tech-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.tech-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: #eae5ec;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.tech-arrow:hover {
+  border-color: var(--accentColor);
+  color: var(--accentColor);
+  background: rgba(230, 57, 70, 0.12);
+}
+
+.tech-progress-track {
+  flex: 1;
+  height: 3px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.tech-progress-fill {
+  height: 100%;
+  background: var(--accentColor);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+  transition: width 0.05s linear;
+}
+
+.tech-counter {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #eae5ec;
+  opacity: 0.85;
+  min-width: 32px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .tech-cards-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .techstack-section {
+    padding: 60px 0 90px;
+  }
+
+  .techstack-section h2 {
+    font-size: 40px;
+    margin-bottom: 35px;
+  }
+
+  .tech-carousel {
+    padding: 24px 20px 20px;
+    transform: none;
+  }
+
+  .tech-cards-track {
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 0;
+  }
+
+  .tech-card-info h4 {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .tech-cards-track {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
